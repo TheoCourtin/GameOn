@@ -14,7 +14,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /* background-image: url("bg_img.jpg"); */
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -403,7 +403,52 @@ input[data-error]::after {
 .text-label {
   font-weight: normal;
   font-size: 16px;
+  
 }
+
+.msg_firstname
+{
+  color: white;
+  font-size: 15px;
+  background-color: #e54858;
+  border-radius: 10px;
+}
+
+.msg_lastname
+{
+  color: white;
+  font-size: 15px;
+  background-color: #e54858;
+}
+
+.msg_email
+{
+  color: white;
+  font-size: 15px;
+  background-color: #e54858;
+}
+
+.msg_birthdate
+{
+  color: white;
+  font-size: 15px;
+  background-color: #e54858;
+}
+
+.msg_location
+{
+  color: white;
+  font-size: 15px;
+  background-color: #e54858;  
+} 
+
+.msg_checkbox1
+{
+  color: white;
+  font-size: 15px;
+  background-color: #e54858;  
+} 
+
 .hero-section {
   min-height: 93vh;
   border-radius: 10px;
