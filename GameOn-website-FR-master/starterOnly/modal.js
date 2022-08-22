@@ -67,28 +67,36 @@ const numbers = /^[0-9]+$/;
     return false;
   } 
    if (lastName.value.length < 2) { 
-    alert ("Veuillez remplir le champ Nom");
+    document.querySelector(".msg_lastname").textContent = "Veuillez remplir le champ Nom";
     return false;
   } 
-   if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
-    alert ("Veuillez remplir le champ email");
+   if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(eMail.value)) { 
+    document.querySelector(".msg_email").textContent = "Veuillez remplir le champ email";
+    return false;
+  }
+  
+  if (/^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/.test(birthDate.value)) { 
+    document.querySelector(".msg_birthdate").textContent = "Veuillez entrer votre date de naissance";
     return false;
   }  
+    
    if (!quantityTournament.value.match(numbers)) { 
-    alert ("Veuillez indiquer le nombre de tournois");
+    document.querySelector(".msg_quantityTournament").textContent = "Veuillez indiquer le nombre de tournois";
     return false;
   }  
    if (!loc1.checked && !loc2.checked && !loc3.checked && !loc4.checked && !loc5.checked && !loc6.checked) { 
-    alert ("Veuillez choisir une ville");
+    document.querySelector(".msg_location").textContent = "Veuillez choisir une ville";
     return false;
   }
 
   if (!checkbox1.checked)
   {
-    alert ("Veuillez cocher cette case");
+    document.querySelector(".msg_checkbox1").textContent = "Veuillez cocher cette case";
     return false;
   }
 })
+
+
 
 
 //V2
