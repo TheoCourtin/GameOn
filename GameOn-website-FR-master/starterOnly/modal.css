@@ -447,7 +447,12 @@ input[data-error]::after {
   color: white;
   font-size: 15px;
   background-color: #e54858;  
-} 
+}
+
+.msg_confirmation
+{
+  
+}
 
 .hero-section {
   min-height: 93vh;
