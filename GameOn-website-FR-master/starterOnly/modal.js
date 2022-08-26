@@ -13,6 +13,9 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCross = document.getElementsByClassName("close");
 
+// const modalBtnClose = document.querySelectorAll("modalBtnClose");
+// const msg_confirmation = document.querySelector("msg_confirmation");
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -27,6 +30,9 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 };
+
+
+
 
 // Close modal event
 modalCross[0].addEventListener ("click", closeModal);
@@ -49,13 +55,9 @@ const loc5 = document.getElementById ('location5');
 const loc6 = document.getElementById ('location6');
 const checkbox1 = document.getElementById("checkbox1");
 
-const dateFormat = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+const dateFormat = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/;
 const numbers = /^[0-9]+$/;
-
-
-// form.addEventListener('submit', (e) => {
-  // e.preventDefault();
-// })
+const regexMail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
 
 
 	form.addEventListener('submit', (e) => {
@@ -70,12 +72,12 @@ const numbers = /^[0-9]+$/;
     document.querySelector(".msg_lastname").textContent = "Veuillez remplir le champ Nom";
     return false;
   } 
-   if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(eMail.value)) { 
+   if (/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
     document.querySelector(".msg_email").textContent = "Veuillez remplir le champ email";
     return false;
   }
   
-  if (/^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/.test(birthDate.value)) { 
+  if (dateFormat.test(birthDate.value)) { 
     document.querySelector(".msg_birthdate").textContent = "Veuillez entrer votre date de naissance";
     return false;
   }  
