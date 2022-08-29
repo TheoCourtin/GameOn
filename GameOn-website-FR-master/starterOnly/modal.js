@@ -13,8 +13,11 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCross = document.getElementsByClassName("close");
 
-// const modalBtnClose = document.querySelectorAll("modalBtnClose");
-// const msg_confirmation = document.querySelector("msg_confirmation");
+const modalBtnClose = document.querySelectorAll("modalBtnClose");
+const msg_confirmation = document.querySelector("msg_confirmation");
+
+// document.querySelector(".modal-body").style.display = "none";
+// document.querySelector(".formConfirmation").style.display = "block";
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -63,22 +66,21 @@ const regexMail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA
 	form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-  console.log(lastName.value);
   if (firstName.value.length < 2) {
-    document.querySelector(".msg_firstname").textContent = "Veuillez remplir le champ Prénom";
+    document.querySelector(".msg_firstname").textContent = "Vous ne remplissez pas les conditions.";
     return false;
   } 
    if (lastName.value.length < 2) { 
-    document.querySelector(".msg_lastname").textContent = "Veuillez remplir le champ Nom";
+    document.querySelector(".msg_lastname").textContent = "Vous ne remplissez pas les conditions.";
     return false;
   } 
-   if (/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
-    document.querySelector(".msg_email").textContent = "Veuillez remplir le champ email";
+   if (regexMail.test(eMail.value) == false) { 
+    document.querySelector(".msg_email").textContent = "Vous ne remplissez pas les conditions.";
     return false;
   }
   
   if (dateFormat.test(birthDate.value)) { 
-    document.querySelector(".msg_birthdate").textContent = "Veuillez entrer votre date de naissance";
+    document.querySelector(".msg_birthdate").textContent = "Vous ne remplissez pas les conditions.";
     return false;
   }  
     
@@ -96,7 +98,8 @@ const regexMail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA
     document.querySelector(".msg_checkbox1").textContent = "Veuillez cocher cette case";
     return false;
   }
-})
+
+  })
 
 
 
