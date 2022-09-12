@@ -9,15 +9,15 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
+const modalBgConfirm = document.querySelector(".bg-confirm");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCross = document.getElementsByClassName("close");
 
-const modalBtnClose = document.querySelectorAll("modalBtnClose");
-const msg_confirmation = document.querySelector("msg_confirmation");
+const modalBtnClose = document.querySelector("#modalBtnClose");
+const msg_confirmation = document.querySelector(".msg_confirmation");
 
-// document.querySelector(".modal-body").style.display = "none";
-// document.querySelector(".formConfirmation").style.display = "block";
+const modalConfirmBtnClose = document.querySelector("#modalConfirmBtnClose");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -33,6 +33,16 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 };
+
+function lauchModalConfirm()
+{
+  modalBgConfirm.style.display = "block";
+};
+
+function closeModalConfirm()
+{
+  modalBgConfirm.style.display = "none";
+}
 
 
 
@@ -66,21 +76,22 @@ const regexMail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA
 	form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
+  console.log(lastName.value);
   if (firstName.value.length < 2) {
-    document.querySelector(".msg_firstname").textContent = "Vous ne remplissez pas les conditions.";
+    document.querySelector(".msg_firstname").textContent = "Veuillez remplir le champ Prénom";
     return false;
   } 
    if (lastName.value.length < 2) { 
-    document.querySelector(".msg_lastname").textContent = "Vous ne remplissez pas les conditions.";
+    document.querySelector(".msg_lastname").textContent = "Veuillez remplir le champ Nom";
     return false;
   } 
-   if (regexMail.test(eMail.value) == false) { 
-    document.querySelector(".msg_email").textContent = "Vous ne remplissez pas les conditions.";
+   if (/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
+    document.querySelector(".msg_email").textContent = "Veuillez remplir le champ email";
     return false;
   }
   
   if (dateFormat.test(birthDate.value)) { 
-    document.querySelector(".msg_birthdate").textContent = "Vous ne remplissez pas les conditions.";
+    document.querySelector(".msg_birthdate").textContent = "Veuillez entrer votre date de naissance";
     return false;
   }  
     
@@ -99,7 +110,11 @@ const regexMail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA
     return false;
   }
 
-  })
+  // document.querySelector(".btn-submit");
+  closeModal();
+  lauchModalConfirm();
+
+})
 
 
 
