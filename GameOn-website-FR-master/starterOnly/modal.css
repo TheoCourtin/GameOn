@@ -408,69 +408,50 @@ input[data-error]::after {
 
 .msg_firstname
 {
-  display: flex;
-  justify-content: center;
   color: white;
   font-size: 15px;
   background-color: #e54858;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .msg_lastname
 {
-  display: flex;
-  justify-content: center;
   color: white;
   font-size: 15px;
   background-color: #e54858;
-  border-radius: 5px;
 }
 
 .msg_email
 {
-  display: flex;
-  justify-content: center;
   color: white;
   font-size: 15px;
   background-color: #e54858;
-  border-radius: 5px;
 }
 
 .msg_birthdate
 {
-  display: flex;
-  justify-content: center;
   color: white;
   font-size: 15px;
   background-color: #e54858;
-  border-radius: 5px;
 }
 
 .msg_location
 {
-  display: flex;
-  justify-content: center;
   color: white;
   font-size: 15px;
-  background-color: #e54858;
-  border-radius: 5px;  
+  background-color: #e54858;  
 } 
 
 .msg_checkbox1
 {
-  display: flex;
-  justify-content: center;
   color: white;
   font-size: 15px;
-  background-color: #e54858;
-  border-radius: 5px;  
+  background-color: #e54858;  
 }
 
 .msg_confirmation
 {
-  padding: 15px 8%;
-  margin: 15px auto;
-  display: none;  
+  
 }
 
 .hero-section {
@@ -595,3 +576,4 @@ footer {
     opacity: 1;
   }
 }
+
