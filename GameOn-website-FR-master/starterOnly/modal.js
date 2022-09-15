@@ -9,18 +9,22 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
-const modalBgConfirm = document.querySelector(".bg-confirm");
+const modalBgConfirm = document.querySelector(".bground-thank");
+
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCross = document.getElementsByClassName("close");
 
-const modalBtnClose = document.querySelector("#modalBtnClose");
-const msg_confirmation = document.querySelector(".msg_confirmation");
+
+// const modalBtnClose = document.querySelector("#modalBtnClose");
+const msg_confirmation = document.querySelector(".thank-body");
 
 const modalConfirmBtnClose = document.querySelector("#modalConfirmBtnClose");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalConfirmBtnClose.addEventListener("click", closeModalConfirm);
+
 
 // launch modal form
 function launchModal() {
@@ -49,6 +53,7 @@ function closeModalConfirm()
 
 // Close modal event
 modalCross[0].addEventListener ("click", closeModal);
+modalCross[1].addEventListener ("click", closeModalConfirm);
 
 
 // #2 Implement form entries
@@ -76,7 +81,7 @@ const regexMail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA
 	form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-  console.log(lastName.value);
+  
   if (firstName.value.length < 2) {
     document.querySelector(".msg_firstname").textContent = "Veuillez remplir le champ Prénom";
     return false;
@@ -113,79 +118,14 @@ const regexMail =  /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA
   // document.querySelector(".btn-submit");
   closeModal();
   lauchModalConfirm();
+  document.querySelector('form').reset();
+  
+  
 
 })
 
 
 
 
-//V2
-
-// const prenom = document.getElementById("first");
-// const nom =  document.getElementById("last");
-// const email =  document.getElementById("email");
-// const naissance = document.getElementById("birthdate");
-// const nombreTournois = document.getElementById("quantity");
-// const location1 = document.getElementById("location1");
-// const location2 =  document.getElementById("location2");
-// const location3 =  document.getElementById("location3");
-// const location4 =  document.getElementById("location4");
-// const location5 =  document.getElementById("location5");
-// const location6 =  document.getElementById("location6");
-// const checkbox1 = document.getElementById("checkbox1");
-// const checkbox2 = document.getElementById("checkbox2");
 
 
-// var mailCaractere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,})
-// )$/;
-
-// function validate () {
-
-  // if (prenom.value === '' || prenom.value.length< 2)
-
-  // {
-    // alert ("Remplir votre prénom avec 2 lettres minimums");  
-    // event.preventDefault();
-  // }
-
-  // if (nom.value === '' || nom.value.length < 2)
-  // {
-    // alert ("Remplir votre nom avec 2 lettres minimums");  
-    // event.preventDefault();
-  // }
-  // if (naissance.value ===''){
-    // alert("entrez une date de naissance");
-    // event.preventDefault();
-  // }
-
-  // if (nombreTournois.value === ''){
-    // alert ("Indiquez le nombre de tournois GameOn");
-    // event.preventDefault();
-  // }
-
-  // if(mailCaractere.test(document.getElementById("email").value)){
-    // alert(" OK");
-  // }
-  // else{
-    // alert ("Entrez une adresse mail correct ");  
-    // event.preventDefault();
-  // }
-
-  // if ((location1.checked)|| (location2.checked) || (location3.checked)
-    // ||(location4.checked) ||(location5.checked) ||(location6.checked)) {
-    // alert("bouton selectionné");
-  // }
-  // else{
-    // alert ("Selectionner un bouton"); 
-    // event.preventDefault();
-  // }
-
-  // if(checkbox1.checked){
-    // alert("Condition selectionné");
-  // }
-  // else{
-    // alert("Veuillez accepter les condtions d'utilisation");
-    // event.preventDefault();
-  // }
-
-// }
