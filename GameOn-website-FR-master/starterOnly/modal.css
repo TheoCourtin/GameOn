@@ -333,6 +333,10 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+
+
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -452,6 +456,43 @@ input[data-error]::after {
 .msg_confirmation
 {
   
+}
+
+/* thank window */
+
+.bground-thank {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.content-thank {
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+  height: 720px;
+  animation-name: thankopen;
+  animation-duration: var(--thank-duration);
+  background: #232323;
+  border-radius: 10px;
+  position: relative;
+  padding-top: 10px;
+}
+.thank-body {
+  height: 88%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto 50px;
+}
+.text-thank {
+  color: #c4c4c4;
+  text-align: center;
 }
 
 .hero-section {
