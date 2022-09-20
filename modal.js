@@ -64,8 +64,8 @@ const loc6 = document.getElementById("location6");
 const checkbox1 = document.getElementById("checkbox1");
 
 // Régex pour la date de naissance, le nombre de tournoi et le mail
-const dateFormat =
-  /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/;
+const dateFormat = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+
 const numbers = /^[0-9]+$/;
 const regexMail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,63})$/;
 
@@ -101,9 +101,9 @@ form.addEventListener("submit", (e) => {
   } else {
     document.querySelector(".msg_email").style.display = "none";
   }
-
-   // Vérifie si la valeur birthdateDate respecte le régex
-  if (dateFormat.test(birthDate.value)) {
+  
+  // Vérifie si la valeur birthdateDate respecte le régex
+  if (!dateFormat.test(birthDate.value)) {
     document.querySelector(".msg_birthdate").textContent =
       "Veuillez entrer votre date de naissance";
     return false;
