@@ -453,9 +453,11 @@ input[data-error]::after {
   background-color: #e54858;  
 }
 
-.msg_confirmation
+.msg_quantityTournament
 {
-  
+  color: white;
+  font-size: 15px;
+  background-color: #e54858;    
 }
 
 /* thank window */
