@@ -139,7 +139,7 @@ form.addEventListener("submit", (e) => {
   // Vérifie si la case des conditions d'utilisations est cochée
   if (!checkbox1.checked) {
     document.querySelector(".msg_checkbox1").textContent =
-      "Veuillez cocher cette case";
+      "Veuillez cocher la case des conditions d'utilisations";
     return false;
   }
 
