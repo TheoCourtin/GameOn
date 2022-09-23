@@ -415,6 +415,9 @@ input[data-error]::after {
   color: white;
   font-size: 15px;
   background-color: #e54858;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
   
 }
 
@@ -423,6 +426,9 @@ input[data-error]::after {
   color: white;
   font-size: 15px;
   background-color: #e54858;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
 }
 
 .msg_email
@@ -430,6 +436,9 @@ input[data-error]::after {
   color: white;
   font-size: 15px;
   background-color: #e54858;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
 }
 
 .msg_birthdate
@@ -437,27 +446,39 @@ input[data-error]::after {
   color: white;
   font-size: 15px;
   background-color: #e54858;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
 }
 
 .msg_location
 {
   color: white;
   font-size: 15px;
-  background-color: #e54858;  
+  background-color: #e54858;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;  
 } 
 
 .msg_checkbox1
 {
   color: white;
   font-size: 15px;
-  background-color: #e54858;  
+  background-color: #e54858;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;  
 }
 
 .msg_quantityTournament
 {
   color: white;
   font-size: 15px;
-  background-color: #e54858;    
+  background-color: #e54858;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;    
 }
 
 /* thank window */
