@@ -415,7 +415,7 @@ input[data-error]::after {
   color: white;
   font-size: 15px;
   background-color: #e54858;
-  border-radius: 10px;
+  
 }
 
 .msg_lastname
