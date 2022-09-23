@@ -62,6 +62,7 @@ const loc4 = document.getElementById("location4");
 const loc5 = document.getElementById("location5");
 const loc6 = document.getElementById("location6");
 const checkbox1 = document.getElementById("checkbox1");
+const btnSubmit = document.querySelector(".btn-submit");
 
 // Régex pour la date de naissance, le nombre de tournoi et le mail
 const dateFormat = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
@@ -69,7 +70,7 @@ const dateFormat = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 const numbers = /^[0-9]+$/;
 const regexMail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,63})$/;
 
-form.addEventListener("submit", (e) => {
+btnSubmit.addEventListener("click", (e) => {
   e.preventDefault();
 
  // Vérification si les champs du formulaire rentrée par l'utilisateur respecte les conditions 
@@ -141,6 +142,8 @@ form.addEventListener("submit", (e) => {
     document.querySelector(".msg_checkbox1").textContent =
       "Veuillez cocher la case des conditions d'utilisations";
     return false;
+  } else {
+    document.querySelector(".msg_checkbox1").style.display = "none"
   }
 
  // Fermeture de la modal du formulaire
