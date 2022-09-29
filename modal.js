@@ -77,31 +77,32 @@ btnSubmit.addEventListener("click", (e) => {
 
 
  // Vérifie si la valeur firstName est inférieur à 2
-  if (firstName.value.length < 2) {
+  if (firstName.value.trim().length < 2) {
     document.querySelector(".msg_firstname").textContent =
-      "Veuillez remplir le champ Prénom";
+      "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     return false;
   } else {
     document.querySelector(".msg_firstname").style.display = "none";
   }
 
   // Vérifie si la valeur lastName est inférieur à 2
-  if (lastName.value.length < 2) {
+  if (lastName.value.trim().length < 2) {
     document.querySelector(".msg_lastname").textContent =
-      "Veuillez remplir le champ Nom";
+      "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     return false;
   } else {
     document.querySelector(".msg_lastname").style.display = "none";
   }
 
   // Vérifie si la valeur eMail respecte le régex
-  if (!regexMail.test(eMail.value)) {
+  if (!eMail.value.trim().match(regexMail)) {
     document.querySelector(".msg_email").textContent =
-      "Veuillez remplir le champ email";
+      "Entrez une adresse valide. Exemple : contact@gmail.com";
     return false;
   } else {
     document.querySelector(".msg_email").style.display = "none";
   }
+ 
   
   // Vérifie si la valeur birthdateDate respecte le régex
   if (!dateFormat.test(birthDate.value)) {
