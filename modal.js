@@ -51,7 +51,7 @@ modalCross[1].addEventListener("click", closeModalConfirm);
 // Récupération des champs du formulaire
 const form = document.getElementById("form");
 const firstName = document.getElementById("first");
-const lastName = document.querySelector("#last");
+const lastName = document.getElementById("last");
 const eMail = document.getElementById("email");
 const birthDate = document.getElementById("birthdate");
 const quantityTournament = document.getElementById("quantity");
@@ -82,7 +82,9 @@ btnSubmit.addEventListener("click", (e) => {
       "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     return false;
   } else {
-    document.querySelector(".msg_firstname").style.display = "none";
+    document.querySelector(".msg_firstname").textContent= " ";
+    // document.querySelector(".msg_firstname").style.display = "none";
+    
   }
 
   // Vérifie si la valeur lastName est inférieur à 2
@@ -91,7 +93,8 @@ btnSubmit.addEventListener("click", (e) => {
       "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     return false;
   } else {
-    document.querySelector(".msg_lastname").style.display = "none";
+     document.querySelector(".msg_lastname").textContent= " ";
+    //document.querySelector(".msg_lastname").style.display = "none";
   }
 
   // Vérifie si la valeur eMail respecte le régex
@@ -100,7 +103,9 @@ btnSubmit.addEventListener("click", (e) => {
       "Entrez une adresse valide. Exemple : contact@gmail.com";
     return false;
   } else {
-    document.querySelector(".msg_email").style.display = "none";
+     document.querySelector(".msg_email").textContent= " ";
+    // document.querySelector(".msg_email").style.display = "none";
+    
   }
  
   
@@ -110,16 +115,22 @@ btnSubmit.addEventListener("click", (e) => {
       "Veuillez entrer votre date de naissance";
     return false;
   } else {
-    document.querySelector(".msg_birthdate").style.display = "none";
+    document.querySelector(".msg_birthdate").textContent= " ";
+    //document.querySelector(".msg_birthdate").style.display = "none";
   }
 
   // Vérifie si la valeur quantityTournament est un nombre
   if (!quantityTournament.value.match(numbers)) {
     document.querySelector(".msg_quantityTournament").textContent =
       "Veuillez indiquer le nombre de tournois";
+       
     return false;
   } else {
-    document.querySelector(".msg_quantityTournament").style.display = "none";
+    document.querySelector(".msg_quantityTournament").textContent= " ";
+    //document.querySelector(".msg_quantityTournament").style.display = "none";
+    
+    
+    
   }
 
   // Vérifie si une case ville est cochée
@@ -135,7 +146,8 @@ btnSubmit.addEventListener("click", (e) => {
       "Veuillez choisir une ville";
     return false;
   } else {
-    document.querySelector(".msg_location").style.display = "none";
+    document.querySelector(".msg_location").textContent= " ";
+    //document.querySelector(".msg_location").style.display = "none";
   }
 
   // Vérifie si la case des conditions d'utilisations est cochée
@@ -144,7 +156,9 @@ btnSubmit.addEventListener("click", (e) => {
       "Veuillez cocher la case des conditions d'utilisations";
     return false;
   } else {
-    document.querySelector(".msg_checkbox1").style.display = "none"
+    document.querySelector(".msg_checkbox1").textContent= " ";
+    // document.querySelector(".msg_checkbox1").style.display = "none";
+    
   }
 
  // Fermeture de la modal du formulaire
@@ -153,6 +167,12 @@ btnSubmit.addEventListener("click", (e) => {
   // Ouverture de la modal du message de confirmation
   lauchModalConfirm();
 
-  // Réinitialise les données du formulaire après la fermture du message de validation
+  // Réinitialise les données du formulaire après la fermeture du message de validation
+
+ 
   document.querySelector("form").reset();
+ 
+  
+
+  
 });
